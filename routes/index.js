@@ -450,7 +450,10 @@ function teleAutoPostChannel(finalAmazon,chanelName){
   var token = '1175672156:AAHUFIWJdFB5vaEXOFn4GsanLAacKJUNDdw';  // <= replace with yours
     var chatId = chanelName; // <= replace with yours
     bot = new nodeTelegramBotApi(token);
-    bot.sendMessage(chatId, finalAmazon)
+    // bot.sendMessage(chatId, finalAmazon)
+    bot.sendMessage(chatId, finalAmazon,{
+      disable_web_page_preview: true
+    })
     // bot.sendMessage(chatId, userExists[0].text_data)
     // var apijj = 'https://api.telegram.org/bot777630419:AAGu5PbnSJ_yhnSjqrf_8t-2tHMqZUJDS08/sendMessage?chat_id=@testchannel0112&text='+finalAmazon;
     // request({
