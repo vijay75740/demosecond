@@ -216,8 +216,8 @@ function postImageWidth(post_link) {
                      tall(urls[0], {
                       method: 'HEAD',
                       maxRedirect: 5
-                    }).then(function(unshortenedUrl){ 
-                      console.log('unshortenedUrlsssssss: ', unshortenedUrl);
+                    }).then(function(unshortenedUrls){ 
+                      let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
                     if(unshortenedUrl.match(/amazon.in/g)){
                       let tagnot;
                       if(unshortenedUrl.match(/earnkaro/g)){
@@ -330,7 +330,8 @@ function postImageWidth(post_link) {
                       tall(unshortenedUrl, {
                         method: 'HEAD',
                         maxRedirect: 5
-                      }).then(function(unshortenedUrl){ 
+                      }).then(function(unshortenedUrls){ 
+                        let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
                     // if(unshortenedUrl.match(/amazon.in/g) && unshortenedUrl.match(/tag/g)){
                     //   console.log("----ui");
                     //   let finalLink =unshortenedUrl.split('&');
@@ -410,11 +411,11 @@ function postImageWidth(post_link) {
                 if(ListflagData.ihd_tele_flag == '0' && ListflagData.ihd_watts_flag == '0' ){
                   console.log('---0');
                 }else if(ListflagData.ihd_tele_flag == '1' && ListflagData.ihd_watts_flag == '1' ){
-                      teleAutoPost(finalAmazon);
+                      teleAutoPost(finalAmazon,ListflagData.bestshopping_token);
                   whatsapp_posts1(finalAmazon, finalIdList[0].apiKey,finalIdList[0].phoneId,finalIdList[0].productId);
                   whatsapp_posts2(finalAmazon, finalIdList[1].apiKey,finalIdList[1].phoneId,finalIdList[1].productId);
                 }else if(ListflagData.ihd_tele_flag == '1' && ListflagData.ihd_watts_flag == '0' ){
-                      teleAutoPost(finalAmazon);
+                      teleAutoPost(finalAmazon,ListflagData.bestshopping_token);
                 }else if(ListflagData.ihd_tele_flag == '0' && ListflagData.ihd_watts_flag == '1' ){
                   whatsapp_posts1(finalAmazon, finalIdList[0].apiKey,finalIdList[0].phoneId,finalIdList[0].productId);
                   whatsapp_posts2(finalAmazon, finalIdList[1].apiKey,finalIdList[1].phoneId,finalIdList[1].productId);
@@ -431,38 +432,19 @@ function postImageWidth(post_link) {
       })
     }
 
-function teleAutoPost(finalAmazon){
-  var token = '777630419:AAGu5PbnSJ_yhnSjqrf_8t-2tHMqZUJDS08';  // <= replace with yours
+function teleAutoPost(finalAmazon,token){
     var chatId = '@onlywomensworld'; // <= replace with yours
     bot = new nodeTelegramBotApi(token);
     bot.sendMessage(chatId, finalAmazon)
-    // var apijj = 'https://api.telegram.org/bot777630419:AAGu5PbnSJ_yhnSjqrf_8t-2tHMqZUJDS08/sendMessage?chat_id=@testchannel0112&text='+finalAmazon;
-    // request({
-    //   uri: apijj
-    // }, (err, response) => {
-    //   if(err){
-    //     setup();
-    //   }
-    // })
 }
 
 function teleAutoPostChannel(finalAmazon,chanelName){
-  var token = '1175672156:AAHUFIWJdFB5vaEXOFn4GsanLAacKJUNDdw';  // <= replace with yours
     var chatId = chanelName; // <= replace with yours
     bot = new nodeTelegramBotApi(token);
     // bot.sendMessage(chatId, finalAmazon)
     bot.sendMessage(chatId, finalAmazon,{
       disable_web_page_preview: true
     })
-    // bot.sendMessage(chatId, userExists[0].text_data)
-    // var apijj = 'https://api.telegram.org/bot777630419:AAGu5PbnSJ_yhnSjqrf_8t-2tHMqZUJDS08/sendMessage?chat_id=@testchannel0112&text='+finalAmazon;
-    // request({
-    //   uri: apijj
-    // }, (err, response) => {
-    //   if(err){
-    //     setup();
-    //   }
-    // })
 }
 
 
