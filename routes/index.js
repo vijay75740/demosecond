@@ -162,7 +162,7 @@ function postImageWidth(post_link,token) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-             //posttele (rides[0].cnt, last_insert_id.id, matchObj);
+             posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
