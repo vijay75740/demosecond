@@ -402,15 +402,15 @@ function postImageWidth(post_link,token) {
                   if (err) {
                     console.log('err: ', err);
                   }else{
-                if(ListflagData.ihd_tele_flag == '0' && ListflagData.ihd_watts_flag == '0' ){
+                if(ListflagData.world_tele_flag == '0' && ListflagData.world_watts_flag == '0' ){
                   console.log('---0');
-                }else if(ListflagData.ihd_tele_flag == '1' && ListflagData.ihd_watts_flag == '1' ){
+                }else if(ListflagData.world_tele_flag == '1' && ListflagData.world_watts_flag == '1' ){
                       teleAutoPost(finalAmazon,ListflagData.bestshopping_token);
                   whatsapp_posts1(finalAmazon, finalIdList[0].apiKey,finalIdList[0].phoneId,finalIdList[0].productId);
                   whatsapp_posts2(finalAmazon, finalIdList[1].apiKey,finalIdList[1].phoneId,finalIdList[1].productId);
-                }else if(ListflagData.ihd_tele_flag == '1' && ListflagData.ihd_watts_flag == '0' ){
+                }else if(ListflagData.world_tele_flag == '1' && ListflagData.world_watts_flag == '0' ){
                       teleAutoPost(finalAmazon,ListflagData.bestshopping_token);
-                }else if(ListflagData.ihd_tele_flag == '0' && ListflagData.ihd_watts_flag == '1' ){
+                }else if(ListflagData.world_tele_flag == '0' && ListflagData.world_watts_flag == '1' ){
                   whatsapp_posts1(finalAmazon, finalIdList[0].apiKey,finalIdList[0].phoneId,finalIdList[0].productId);
                   whatsapp_posts2(finalAmazon, finalIdList[1].apiKey,finalIdList[1].phoneId,finalIdList[1].productId);
                 }else{
