@@ -43,12 +43,12 @@ function postImageWidth(post_link,token) {
           var avilabilty = $('#availability').find('span').text().trim();
           console.log('avilabilty: ', avilabilty);
 
-          if(siteheadidsdng && siteheading && sitestrckprice && sitestrckpricessds && savepercent ){
+          if(siteheadidsdng && siteheading && post_link){
         telePost(token,siteheadidsdng,siteheading,sitestrckprice,sitestrckpricessds,savepercent,post_link,avilabilty)
             console.log("===i");
-         } else if(siteheadidsdng && siteheading && sitestrckpricessds && avilabilty ){
-            console.log("===i");
-          telePosted(token,siteheadidsdng,siteheading,sitestrckpricessds,post_link,avilabilty)
+        //  } else if(siteheadidsdng && siteheading && sitestrckpricessds && avilabilty ){
+        //     console.log("===i");
+        //   telePosted(token,siteheadidsdng,siteheading,sitestrckpricessds,post_link,avilabilty)
         }else{
             console.log("no---");
           }
@@ -58,21 +58,44 @@ function postImageWidth(post_link,token) {
 
     function telePost (token,post_img,post_title,post_regularPrice,post_sellPrice,savepercent,post_link,avilabilty) {
       var chatId = '@onlywomensworld'; // <= replace with yours
-      // var savings = post_regularPrice - post_sellPrice;
-      // var savEPERCENT = Math.round(100 * savings / post_regularPrice);
+      var html;
 
-      var html = '🛍 ' + post_title + '\n\n' +
+      if(post_regularPrice && post_sellPrice && savepercent && avilabilty){ 
+       html = '🛍 ' + post_title + '\n\n' +
         '🔗 <a href="' + post_link + '">' + post_link + '</a>\n' +
         '♨️ <b style="background-color:red;">PRICE : </b> ' + post_sellPrice + '\n' +
         '🚫 <b>M.R.P. : </b> ' + post_regularPrice + '\n' +
         '💰 <b>SAVINGS : </b> ' + savepercent + '\n' +
         '🙋 <b>AVAILABILITY : </b> <i> ' + avilabilty + '</i>\n' +
         '🚚 FREE Delivery\n\n' +
-        // '👉 More Deals - <a href= @' + req.query.chanel + '> @' + req.query.chanel+'</a>\n'+
-        // '👉 More Deals - @' + req.query.chanel;
         '👉 <a href="https://t.me/bestshoppingdeal00"> Join US for More Deals </a>\n';
-      // +'\n'+
-      // '🌐 Website - <a href=' + req.query.website.text + '>' + req.query.website + '</a>';
+      }else if(post_regularPrice && savepercent && avilabilty){ 
+         html = '🛍 ' + post_title + '\n\n' +
+        '🔗 <a href="' + post_link + '">' + post_link + '</a>\n' +
+        '🚫 <b>M.R.P. : </b> ' + post_regularPrice + '\n' +
+        '💰 <b>SAVINGS : </b> ' + savepercent + '\n' +
+        '🙋 <b>AVAILABILITY : </b> <i> ' + avilabilty + '</i>\n' +
+        '🚚 FREE Delivery\n\n' +
+        '👉 <a href="https://t.me/bestshoppingdeal00"> Join US for More Deals </a>\n';
+       } else if(post_sellPrice && savepercent && avilabilty){ 
+          html = '🛍 ' + post_title + '\n\n' +
+         '🔗 <a href="' + post_link + '">' + post_link + '</a>\n' +
+         '♨️ <b style="background-color:red;">PRICE : </b> ' + post_sellPrice + '\n' +
+         '💰 <b>SAVINGS : </b> ' + savepercent + '\n' +
+         '🙋 <b>AVAILABILITY : </b> <i> ' + avilabilty + '</i>\n' +
+         '🚚 FREE Delivery\n\n' +
+         '👉 <a href="https://t.me/bestshoppingdeal00"> Join US for More Deals </a>\n';
+       } else if(savepercent && avilabilty){ 
+        html = '🛍 ' + post_title + '\n\n' +
+       '🔗 <a href="' + post_link + '">' + post_link + '</a>\n' +
+       '💰 <b>SAVINGS : </b> ' + savepercent + '\n' +
+       '🙋 <b>AVAILABILITY : </b> <i> ' + avilabilty + '</i>\n' +
+       '🚚 FREE Delivery\n\n' +
+       '👉 <a href="https://t.me/bestshoppingdeal00"> Join US for More Deals </a>\n';
+     } else{
+      html = '🛍 ' + post_title + '\n\n' +
+      '🔗 <a href="' + post_link + '">' + post_link + '</a>\n' ;
+     }
       var buttons = [
         [
           { "text": "➡️ ➡️ 🛒 CLICK HERE TO BUY 🛒 ⬅️ ⬅️", "url": post_link }
