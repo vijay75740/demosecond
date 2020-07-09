@@ -233,7 +233,7 @@ function postImageWidth(post_link,token) {
                     }else{
                     xzhxzh = array[j]
                     }
-                  // let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)
+                  let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)
                   //    tall(urls[0], {
                   //     method: 'HEAD',
                   //     maxRedirect: 5
@@ -357,7 +357,7 @@ function postImageWidth(post_link,token) {
                       // }).then(function(unshortenedUrls){ 
                       //   let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
 
-                        unshort(urls[0]).then(function(unshortenedUrls){ 
+                        unshort(unshortenedUrl).then(function(unshortenedUrls){ 
                           let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
                     // if(unshortenedUrl.match(/amazon.in/g) && unshortenedUrl.match(/tag/g)){
                     //   console.log("----ui");
