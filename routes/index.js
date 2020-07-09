@@ -14,6 +14,7 @@ const axios = require('axios');
 var textVersion = require("textversionjs");
 const cheerio = require('cheerio')
 var _ = require('underscore');
+const unshort = require('url-unshorten');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -232,12 +233,15 @@ function postImageWidth(post_link,token) {
                     }else{
                     xzhxzh = array[j]
                     }
-                  let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)
-                     tall(urls[0], {
-                      method: 'HEAD',
-                      maxRedirect: 5
-                    }).then(function(unshortenedUrls){ 
-                      let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
+                  // let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)
+                  //    tall(urls[0], {
+                  //     method: 'HEAD',
+                  //     maxRedirect: 5
+                  //   }).then(function(unshortenedUrls){ 
+                  //     let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
+
+                      unshort(urls[0]).then(function(unshortenedUrls){ 
+                        let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
                     if(unshortenedUrl.match(/amazon.in/g)){
                       let tagnot;
                       if(unshortenedUrl.match(/earnkaro/g)){
@@ -347,11 +351,14 @@ function postImageWidth(post_link,token) {
                     }
                   })
                     }else{
-                      tall(unshortenedUrl, {
-                        method: 'HEAD',
-                        maxRedirect: 5
-                      }).then(function(unshortenedUrls){ 
-                        let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
+                      // tall(unshortenedUrl, {
+                      //   method: 'HEAD',
+                      //   maxRedirect: 5
+                      // }).then(function(unshortenedUrls){ 
+                      //   let unshortenedUrl = unshortenedUrls.replace(/&amp;/g,'&');
+
+                        unshort(urls[0]).then(function(unshortenedUrls){ 
+                          let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
                     // if(unshortenedUrl.match(/amazon.in/g) && unshortenedUrl.match(/tag/g)){
                     //   console.log("----ui");
                     //   let finalLink =unshortenedUrl.split('&');
