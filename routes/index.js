@@ -353,7 +353,7 @@ function urldecode(str) {
                           }
                         let sstarget= finalLink.join('&').replace(/&demoyou/g, '');
                           tagnot= ("https://linksredirect.com/?cid=76950&subid=kudrat_cl&source=linkkit&url=").concat(encodeURIComponent(sstarget));
-                           example(tagnot);
+                           example(tagnot.replace(/[[]/g,'%5B').replace(/[]]/g,'%5D'));
                         }
                       }
                       async function example(dddd) {
