@@ -308,7 +308,8 @@ function postImageWidth(post_link,token) {
                         quelink = finalLink[1];
                       for (let k = 0; k < ListflagDatass.length; k++) {
                         if(urlencode(finalLink[1]).match(ListflagDatass[k].domain_url)){
-                          tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(finalLink[1]));
+                          tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(finalLink[1]);
+//                           tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(finalLink[1]));
                         }
                       }
                     // }else{
@@ -324,7 +325,8 @@ function postImageWidth(post_link,token) {
                         quelink = unshortenedUrl;
                         for (let t = 0; t < ListflagDatass.length; t++) {
                           if(urlencode(unshortenedUrl).match(ListflagDatass[t].domain_url)){
-                            tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
+                            tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(unshortenedUrl);
+//                             tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                           }
                         }
                       }
