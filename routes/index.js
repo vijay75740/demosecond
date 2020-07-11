@@ -205,7 +205,7 @@ function postImageWidth(post_link,token) {
     }
    
 function urldecode(str) {
-      return str.replace(/&/g,'%26').replace(/=/g,'%3D').replace(/[?]/g,'%3F').replace(/[+]/g,'%2B');
+      return str.replace(/&/g,'%26').replace(/=/g,'%3D').replace(/[?]/g,'%3F').replace(/[+]/g,'%2B').replace(/[[]/g,'%5B').replace(/[]]/g,'%5D');
     }
 
     function posttele (bodyss, lastInsertId, lastArrayData) {
