@@ -307,8 +307,10 @@ function postImageWidth(post_link,token) {
                         let finalLink =unshortenedUrl.split('dl=');
                         quelink = finalLink[1];
                       for (let k = 0; k < ListflagDatass.length; k++) {
-                        if(urlencode(finalLink[1]).match(ListflagDatass[k].domain_url)){
+                        if(finalLink[1].match(ListflagDatass[k].domain_url)){
+//                         if(urlencode(finalLink[1]).match(ListflagDatass[k].domain_url)){
                           tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(finalLink[1]);
+                           console.log("1",tagnot);
 //                           tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(finalLink[1]));
                         }
                       }
@@ -324,8 +326,10 @@ function postImageWidth(post_link,token) {
                       }else{
                         quelink = unshortenedUrl;
                         for (let t = 0; t < ListflagDatass.length; t++) {
-                          if(urlencode(unshortenedUrl).match(ListflagDatass[t].domain_url)){
+                          if(unshortenedUrl.match(ListflagDatass[t].domain_url)){
+//                           if(urlencode(unshortenedUrl).match(ListflagDatass[t].domain_url)){
                             tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(unshortenedUrl);
+                            console.log("2",tagnot);
 //                             tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                           }
                         }
@@ -348,6 +352,7 @@ function postImageWidth(post_link,token) {
                         }
                       }
                       async function example(dddd) {
+                         console.log("3",dddd);
                         let response =await bitly.shorten(dddd);
                       final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ').replace(/&/g, 'and').replace(/;/g, ' ');
                     }
