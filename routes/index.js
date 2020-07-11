@@ -203,6 +203,9 @@ function postImageWidth(post_link,token) {
         .replace(/%28/g,'(').replace(/%3F/g,'?').replace(/%29/g,')').replace(/%2A/g,'*')
         .replace(/%20/g, '+');
     }
+   function urldecode(str) {
+      return str.replace('&',/%26/g).replace('=',/%3D/g).replace('?',/%3F/g).replace('+',/%20/g);
+    }
 
     function posttele (bodyss, lastInsertId, lastArrayData) {
       let sqlsss = "SELECT * FROM post_flags";
@@ -310,7 +313,7 @@ function postImageWidth(post_link,token) {
                       for (let k = 0; k < ListflagDatass.length; k++) {
                         if(finalLink[1].match(ListflagDatass[k].domain_url)){
 //                         if(urlencode(finalLink[1]).match(ListflagDatass[k].domain_url)){
-                          tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(finalLink[1]);
+                          tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(finalLink[1]));
                            console.log("1",tagnot);
 //                           tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(finalLink[1]));
                         }
@@ -329,7 +332,7 @@ function postImageWidth(post_link,token) {
                         for (let t = 0; t < ListflagDatass.length; t++) {
                           if(unshortenedUrl.match(ListflagDatass[t].domain_url)){
 //                           if(urlencode(unshortenedUrl).match(ListflagDatass[t].domain_url)){
-                            tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(unshortenedUrl);
+                            tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(unshortenedUrl));
                             console.log("2",tagnot);
 //                             tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                           }
