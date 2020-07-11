@@ -242,6 +242,7 @@ function postImageWidth(post_link,token) {
 
                       unshort(urls[0]).then(function(unshortenedUrls){ 
                         let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
+                        console.log("0",unshortenedUrl);
                     if(unshortenedUrl.match(/amazon.in/g)){
                       let tagnot;
                       if(unshortenedUrl.match(/earnkaro/g)){
