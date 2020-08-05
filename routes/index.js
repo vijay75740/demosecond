@@ -160,7 +160,7 @@ function postFlipkartImageWidth(post_link,token) {
       var html;
 
       if(post_regularPrice && post_sellPrice && savepercent && ratting){ 
-      var savings = Number(post_regularPrice.replace('₹','')) -  Number(post_sellPrice.replace('₹',''));
+      var savings = Number(post_regularPrice.replace('₹','').replace(',','')) -  Number(post_sellPrice.replace('₹','').replace(',',''));
        html = '🛍 ' + post_title + '\n\n' +
         '🔗 <a href="' + post_link + '">' + post_link + '</a>\n' +
         '♨️ <b style="background-color:red;">PRICE : </b> ' + post_sellPrice + '\n' +
@@ -285,7 +285,7 @@ function postFlipkartImageWidth(post_link,token) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-//              posttele (rides[0].cnt, last_insert_id.id, matchObj);
+             posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
@@ -591,7 +591,7 @@ function urldecode(str) {
                                responses ={"link":unshortenedUrls.unshorten};
                                 }
                               final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),responses.link);
-                              postFlipkartImageWidth(response.link,ListflagData.bestshopping_token); 
+                              postFlipkartImageWidth(responses.link,ListflagData.bestshopping_token); 
                             })
                             .catch(function(err){ return err;})
                             }
