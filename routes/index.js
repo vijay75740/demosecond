@@ -285,7 +285,7 @@ function postFlipkartImageWidth(post_link,token) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-             //posttele (rides[0].cnt, last_insert_id.id, matchObj);
+             posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
@@ -540,6 +540,26 @@ function urldecode(str) {
                               }
                             let sstarget= finalLink.join('&').replace(/&demoyou/g, '');
                               tagnot= ("https://linksredirect.com/?cid=76950&subid=kudrat_cl&source=linkkit&url=").concat(encodeURIComponent(sstarget));
+                               if(ListflagData.bitlyFlag == "True"){ 
+                                example1(tagnot.replace(/%25/g,'%'));
+                            }else{
+                              if(tagnot.match(/flipkart.com/g)){
+                                example4(tagnot.replace(/%25/g,'%'));
+                              }else{
+                                example2(tagnot.replace(/%25/g,'%'));
+                              }
+                            }
+                            }else if(ListflagData.flipkart_server == 'inrdeal'){
+                              let finalLink =urlencode(quelink).split('&');
+                              for (let h = 0; h < finalLink.length; h++) {
+                                if(finalLink[h].match(/^affid/g)){
+                                  finalLink[h] = 'demoyou'
+                                }else if(finalLink[h].match(/^affExtParam1/g)){
+                                  finalLink[h] = 'demoyou'
+                                }
+                              }
+                            let sstarget= finalLink.join('&').replace(/&demoyou/g, '');
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(encodeURIComponent(sstarget));
                                if(ListflagData.bitlyFlag == "True"){ 
                                 example1(tagnot.replace(/%25/g,'%'));
                             }else{
