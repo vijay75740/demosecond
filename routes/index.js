@@ -575,6 +575,7 @@ function urldecode(str) {
                         }
                           async function example1(dddd) {
                             let response =await bitly.shorten(dddd);
+				  console.log("res",response);
                           final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ').replace(/&/g, 'and').replace(/;/g, ' ');
                           postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
                         }
@@ -708,6 +709,7 @@ function urldecode(str) {
               }
               setTimeout(()=>{
                 let finalAmazon = final.join('\n');
+		      console.log("sasa",finalAmazon);
               if(finalAmazon.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)){
                 let finalIdList = JSON.parse(ListflagData.array_data).user;
                 let finalPostList;
