@@ -337,7 +337,7 @@ function urldecode(str) {
               for (let j = 0; j < array.length; j++) {
                 if(array[j].match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)){
                   let xzhxzh;
-                    if(array[j].match(/amazon.in/g)){
+                    if(array[j].match(/amazon.in/g) || array[j].match(/amazon.it/g)){
                      xzhxzh = array[j].replace(/[[\]]/g,'').replace(/ /g, '@')
                     }else{
                     xzhxzh = array[j]
@@ -346,7 +346,7 @@ function urldecode(str) {
                       unshort(urls[0]).then(function(unshortenedUrls){ 
                         let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
                         console.log("0",unshortenedUrl);
-                    if(unshortenedUrl.match(/amazon.in/g)){
+                    if(unshortenedUrl.match(/amazon.in/g) || unshortenedUrl.match(/amazon.it/g)){
                       let tagnot;
                       if(unshortenedUrl.match(/earnkaro/g)){
                         let finalLink =unshortenedUrl.split('dl=');
@@ -627,7 +627,7 @@ function urldecode(str) {
                     }else{
                       unshort(unshortenedUrl).then(function(unshortenedUrls){ 
                         let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
-                      if(unshortenedUrl.match(/amazon.in/g)){
+                      if(unshortenedUrl.match(/amazon.in/g) || unshortenedUrl.match(/amazon.it/g)){
                         let tagnot;
                     if(unshortenedUrl.match(/[?]/g)){
                       let finalLink =unshortenedUrl.split('&');
