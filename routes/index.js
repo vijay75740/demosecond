@@ -253,7 +253,9 @@ function postFlipkartImageWidth(post_link,token) {
  
 // setInterval( function (req, res, next) {
 //   async.waterfall([
-  setInterval( function setup() {
+ 
+
+setInterval( function setup() {
       // axios('https://t.me/s/IHDBroadcast')
       // axios('https://t.me/s/stg003')
       axios('https://t.me/s/postwomensworld')
@@ -437,6 +439,7 @@ function urldecode(str) {
                             let ListflagDatass = flagsData;
                           let tagnot;
                           let quelink;
+                          let quelinkRL;
                           if(unshortenedUrl.match(/earnkaro/g)){
                             console.log("11111111");
                           // if(unshortenedUrl.match(/dl=/g)){
@@ -459,7 +462,6 @@ function urldecode(str) {
                               tagnot= undefined;
                             }else{
                             console.log("222222222");
-
                             for (let t = 0; t < ListflagDatass.length; t++) {
                               if(urlencode(unshortenedUrl).match(ListflagDatass[t].domain_url)){
                                 // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
@@ -469,30 +471,46 @@ function urldecode(str) {
                             }
                           }
                           }else{
-                          unshort(unshortenedUrl).then(function(unshortenedUrls11){ 
-                            let unshortenedUrls22 = unshortenedUrls11.unshorten.replace(/&amp;/g,'&').replace(/(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)/,'');
-                            console.log('unshortenedUrls22: ', unshortenedUrls22);
-                            quelink = unshortenedUrls11.unshorten.replace(/&amp;/g,'&');
-                            console.log('quelink:333333333 ', quelink);
-                            if(unshortenedUrls22.match(/^flipkart.com/g) ||unshortenedUrls22.match(/^banggood.com/g) || unshortenedUrls22.match(/^puma.com/g) ||unshortenedUrls22.match(/^unacademy.com/g) ||unshortenedUrls22.match(/^coolwinks.com/g) ||unshortenedUrls22.match(/^orra.co.in/g) ||unshortenedUrls22.match(/^360totalsecurity.com/g) ||unshortenedUrls22.match(/^maxbupa.com/g) ||unshortenedUrls22.match(/^religarehealthinsurance.com/g) ||unshortenedUrls22.match(/^fnp.com/g) ||unshortenedUrls22.match(/^healthxp.in/g) ||unshortenedUrls22.match(/^bigrock.in/g) ||unshortenedUrls22.match(/^igp.com/g) ||unshortenedUrls22.match(/^letyshops.com/g) ||unshortenedUrls22.match(/^spartanpoker.com/g) ||unshortenedUrls22.match(/^adda52.com/g) ||unshortenedUrls22.match(/^balaji/g) ||unshortenedUrls22.match(/^eduonix.com/g) ||unshortenedUrls22.match(/^paytmmall.com/g) ||unshortenedUrls22.match(/^testbook.com/g) ||unshortenedUrls22.match(/^mamaearth.in/g) ||unshortenedUrls22.match(/^wonderchef.com/g) ||unshortenedUrls22.match(/^zee5/g) ||unshortenedUrls22.match(/^beardo.in/g) ||unshortenedUrls22.match(/^oneplus.in/g) ||unshortenedUrls22.match(/^1mg.com/g) ||unshortenedUrls22.match(/^udemy.com/g) ||unshortenedUrls22.match(/^hometown.in/g) ||unshortenedUrls22.match(/^magzter.com/g) ||unshortenedUrls22.match(/^asics.com/g) ||unshortenedUrls22.match(/^asics.com/g) ||unshortenedUrls22.match(/^ajio.com/g) ||unshortenedUrls22.match(/^timesprime.com/g)||unshortenedUrls22.match(/^themomsco.com/g) ||unshortenedUrls22.match(/^akbartravels.com/g) ||unshortenedUrls22.match(/^aliexpress.com/g) ||unshortenedUrls22.match(/^banggood.in/g) ||unshortenedUrls22.match(/^bata.in/g) ||unshortenedUrls22.match(/^behrouzbiryani.com/g) ||unshortenedUrls22.match(/^biba.in/g) ||unshortenedUrls22.match(/^bigbasket.com/g) ||unshortenedUrls22.match(/^brandfactoryonline.com/g) ||unshortenedUrls22.match(/^chumbak.com/g) ||unshortenedUrls22.match(/^cleartrip.com/g) ||unshortenedUrls22.match(/^clovia.com/g) ||unshortenedUrls22.match(/^croma.com/g) ||unshortenedUrls22.match(/^decathlon.in/g) ||unshortenedUrls22.match(/^dominos.co.in/g) ||unshortenedUrls22.match(/^etihad.com/g) ||unshortenedUrls22.match(/^faasos.io/g) ||unshortenedUrls22.match(/^fabhotels.com/g) ||unshortenedUrls22.match(/^firstcry.com/g) ||unshortenedUrls22.match(/^fossil.com/g) ||unshortenedUrls22.match(/^harmanaudio.in/g) ||unshortenedUrls22.match(/^hungama.com/g) ||unshortenedUrls22.match(/^insider.in/g) ||unshortenedUrls22.match(/^jockeyindia.com/g) ||unshortenedUrls22.match(/^kalkifashion.com/g) ||unshortenedUrls22.match(/^lenskart.com/g) ||unshortenedUrls22.match(/^lifestylestores.com/g) ||unshortenedUrls22.match(/^limeroad.com/g) ||unshortenedUrls22.match(/^manyavar.com/g) ||unshortenedUrls22.match(/^mcdonaldsindia.com/g) ||unshortenedUrls22.match(/^medlife.com/g) ||unshortenedUrls22.match(/^microsoft.com/g) ||unshortenedUrls22.match(/^mivi.in/g) ||unshortenedUrls22.match(/^makemytrip.com/g) ||unshortenedUrls22.match(/^myntra.com/g) ||unshortenedUrls22.match(/^nnnow.com/g) ||unshortenedUrls22.match(/^nykaafashion.com/g) ||unshortenedUrls22.match(/^oyorooms.com/g) ||unshortenedUrls22.match(/^pepperfry.com/g) ||unshortenedUrls22.match(/^pizzahut.co.in/g) ||unshortenedUrls22.match(/^puma.com/g) ||unshortenedUrls22.match(/^qatarairways.com/g) ||unshortenedUrls22.match(/^rentomojo.com/g) ||unshortenedUrls22.match(/^samsung.com/g) ||unshortenedUrls22.match(/^singaporeair.com/g) ||unshortenedUrls22.match(/^sochstore.com/g) ||unshortenedUrls22.match(/^tanishq.co.in/g) ||unshortenedUrls22.match(/^themancompany.com/g) ||unshortenedUrls22.match(/^zivame.com/g) ||unshortenedUrls22.match(/^zoomcar.com/g) ){
-                              if(quelinkRL.match(/^flipkart.com/g)){
-                                tagnot= undefined;
-                              }else{
-                                console.log("3333333");
-                              for (let t = 0; t < ListflagDatass.length; t++) {
-                                  if(urlencode(quelink).match(ListflagDatass[t].domain_url)){
-                                    // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrls33));
-                                    tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(quelink));
-                                    console.log('tagnot:33333333 ', tagnot);
-                                  }
-                                }
+                            if(urlencode(unshortenedUrl).match('dl=')){
+                              let finalLink33 =urlencode(unshortenedUrl).split('dl=');
+                              quelink = finalLink33[1];
+                            }else if(urlencode(unshortenedUrl).match('url=')){
+                              let finalLink44 =urlencode(unshortenedUrl).split('url=');
+                              quelink = finalLink44[1];
+                            } 
+                            // if(quelinkRL.match(/^flipkart.com/g)){
+                            //   tagnot= undefined;
+                            // }else{
+                            // console.log("222222222");
+                            for (let t = 0; t < ListflagDatass.length; t++) {
+                              if(urlencode(quelink).match(ListflagDatass[t].domain_url)){
+                                // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
+                                tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(quelink));
+                                console.log('tagnot:222222222 ', tagnot);
                               }
                             }
-                              // else{
-                              // }
-                          })
-                          .catch(function(err){ console.error('AAAW 👻', err)})
-                            
+                          // }
+                          // unshort(unshortenedUrl).then(function(unshortenedUrls11){ 
+                          //   let unshortenedUrls22 = unshortenedUrls11.unshorten.replace(/&amp;/g,'&').replace(/(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)/,'');
+                          //   console.log('unshortenedUrls22: ', unshortenedUrls22);
+                          //   quelink = unshortenedUrls11.unshorten.replace(/&amp;/g,'&');
+                          //   console.log('quelink:333333333 ', quelink);
+                          //   if(unshortenedUrls22.match(/^flipkart.com/g) ||unshortenedUrls22.match(/^banggood.com/g) || unshortenedUrls22.match(/^puma.com/g) ||unshortenedUrls22.match(/^unacademy.com/g) ||unshortenedUrls22.match(/^coolwinks.com/g) ||unshortenedUrls22.match(/^orra.co.in/g) ||unshortenedUrls22.match(/^360totalsecurity.com/g) ||unshortenedUrls22.match(/^maxbupa.com/g) ||unshortenedUrls22.match(/^religarehealthinsurance.com/g) ||unshortenedUrls22.match(/^fnp.com/g) ||unshortenedUrls22.match(/^healthxp.in/g) ||unshortenedUrls22.match(/^bigrock.in/g) ||unshortenedUrls22.match(/^igp.com/g) ||unshortenedUrls22.match(/^letyshops.com/g) ||unshortenedUrls22.match(/^spartanpoker.com/g) ||unshortenedUrls22.match(/^adda52.com/g) ||unshortenedUrls22.match(/^balaji/g) ||unshortenedUrls22.match(/^eduonix.com/g) ||unshortenedUrls22.match(/^paytmmall.com/g) ||unshortenedUrls22.match(/^testbook.com/g) ||unshortenedUrls22.match(/^mamaearth.in/g) ||unshortenedUrls22.match(/^wonderchef.com/g) ||unshortenedUrls22.match(/^zee5/g) ||unshortenedUrls22.match(/^beardo.in/g) ||unshortenedUrls22.match(/^oneplus.in/g) ||unshortenedUrls22.match(/^1mg.com/g) ||unshortenedUrls22.match(/^udemy.com/g) ||unshortenedUrls22.match(/^hometown.in/g) ||unshortenedUrls22.match(/^magzter.com/g) ||unshortenedUrls22.match(/^asics.com/g) ||unshortenedUrls22.match(/^asics.com/g) ||unshortenedUrls22.match(/^ajio.com/g) ||unshortenedUrls22.match(/^timesprime.com/g)||unshortenedUrls22.match(/^themomsco.com/g) ||unshortenedUrls22.match(/^akbartravels.com/g) ||unshortenedUrls22.match(/^aliexpress.com/g) ||unshortenedUrls22.match(/^banggood.in/g) ||unshortenedUrls22.match(/^bata.in/g) ||unshortenedUrls22.match(/^behrouzbiryani.com/g) ||unshortenedUrls22.match(/^biba.in/g) ||unshortenedUrls22.match(/^bigbasket.com/g) ||unshortenedUrls22.match(/^brandfactoryonline.com/g) ||unshortenedUrls22.match(/^chumbak.com/g) ||unshortenedUrls22.match(/^cleartrip.com/g) ||unshortenedUrls22.match(/^clovia.com/g) ||unshortenedUrls22.match(/^croma.com/g) ||unshortenedUrls22.match(/^decathlon.in/g) ||unshortenedUrls22.match(/^dominos.co.in/g) ||unshortenedUrls22.match(/^etihad.com/g) ||unshortenedUrls22.match(/^faasos.io/g) ||unshortenedUrls22.match(/^fabhotels.com/g) ||unshortenedUrls22.match(/^firstcry.com/g) ||unshortenedUrls22.match(/^fossil.com/g) ||unshortenedUrls22.match(/^harmanaudio.in/g) ||unshortenedUrls22.match(/^hungama.com/g) ||unshortenedUrls22.match(/^insider.in/g) ||unshortenedUrls22.match(/^jockeyindia.com/g) ||unshortenedUrls22.match(/^kalkifashion.com/g) ||unshortenedUrls22.match(/^lenskart.com/g) ||unshortenedUrls22.match(/^lifestylestores.com/g) ||unshortenedUrls22.match(/^limeroad.com/g) ||unshortenedUrls22.match(/^manyavar.com/g) ||unshortenedUrls22.match(/^mcdonaldsindia.com/g) ||unshortenedUrls22.match(/^medlife.com/g) ||unshortenedUrls22.match(/^microsoft.com/g) ||unshortenedUrls22.match(/^mivi.in/g) ||unshortenedUrls22.match(/^makemytrip.com/g) ||unshortenedUrls22.match(/^myntra.com/g) ||unshortenedUrls22.match(/^nnnow.com/g) ||unshortenedUrls22.match(/^nykaafashion.com/g) ||unshortenedUrls22.match(/^oyorooms.com/g) ||unshortenedUrls22.match(/^pepperfry.com/g) ||unshortenedUrls22.match(/^pizzahut.co.in/g) ||unshortenedUrls22.match(/^puma.com/g) ||unshortenedUrls22.match(/^qatarairways.com/g) ||unshortenedUrls22.match(/^rentomojo.com/g) ||unshortenedUrls22.match(/^samsung.com/g) ||unshortenedUrls22.match(/^singaporeair.com/g) ||unshortenedUrls22.match(/^sochstore.com/g) ||unshortenedUrls22.match(/^tanishq.co.in/g) ||unshortenedUrls22.match(/^themancompany.com/g) ||unshortenedUrls22.match(/^zivame.com/g) ||unshortenedUrls22.match(/^zoomcar.com/g) ){
+                          //     if(quelinkRL.match(/^flipkart.com/g)){
+                          //       tagnot= undefined;
+                          //     }else{
+                          //       console.log("3333333");
+                          //     for (let t = 0; t < ListflagDatass.length; t++) {
+                          //         if(urlencode(quelink).match(ListflagDatass[t].domain_url)){
+                          //           // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrls33));
+                          //           tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(quelink));
+                          //           console.log('tagnot:33333333 ', tagnot);
+                          //         }
+                          //       }
+                          //     }
+                          //   }
+                          // })
+                          // .catch(function(err){ console.error('AAAW 👻', err)})
                           }
                           }
                           if(tagnot != undefined){
@@ -801,7 +819,30 @@ function teleAutoPostChannel(finalAmazon,chanelName){
     })
 }
 
+router.get('/getConOneData', function (req, res) {
+  async.waterfall([
+    function (nextCall) {
+      unshort("https://paritycube.go2cloud.org/aff_c?offer_id=628&aff_id=1&aff_sub=20200822clzp3bqkgg10&aff_sub2=CL_75221-76725&url=https%3A%2F%2Fwww.ajio.com%2Fs%2Fmen-clothing%3Fquery%3D%253Adiscount-desc%26curated%3Dtrue%26curatedid%3Dmen-clothing%26gridColumns%3D2%26%3D%26utm_source%3Dcuelinks%26utm_medium%3Daffiliate%26utm_campaign%3Dajio_{aff_sub}").then(function(unshortenedUrls){ 
+        console.log('unshortenedUrls.unshorten: ', unshortenedUrls.unshorten);
+        nextCall(null, unshortenedUrls.unshorten);
 
+      })
+      .catch(function(err){ console.error('AAAW 👻', err)})
+    }
+  ], function (err, response) {
+    if (err) {
+      return res.send({
+        status: err.code ? err.code : 400,
+        message: (err && err.msg) || "someyhing went wrong"
+      });
+    }
+    return res.send({
+      status: 200,
+      message: "Edit post flag update sucessfully",
+      data: response
+    });
+  });
+})
 router.post('/getAllInOneData', function (req, res) {
   var response = {
     "recordsTotal": 0,
