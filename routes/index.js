@@ -343,6 +343,7 @@ function urldecode(str) {
                     xzhxzh = array[j]
                     }
                   let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)
+		  console.log("url------",urls);
                       unshort(urls[0]).then(function(unshortenedUrls){ 
                         let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
                         console.log("0",unshortenedUrl);
