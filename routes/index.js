@@ -625,7 +625,7 @@ function urldecode(str) {
                           async function example1(dddd) {
                             let response =await bitly.shorten(dddd);
 				 
-                          final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ').replace(/&/g, 'and').replace(/;/g, ' ');
+                          final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ');
                           postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
                         }
                         async function example3(dddd) {
