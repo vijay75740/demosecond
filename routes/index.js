@@ -556,7 +556,7 @@ function urldecode(str) {
                               var minu = dateObj.getMinutes();
                               let ren = Math.random().toString(36).substring(7);
                             let tagnots= finalLink.join('&').replace(/@/g, '').replace(/&&/g, '&').replace(/(\?&)/g, '?').replace(/&&&/g, '&');
-                            tagnot= tagnots.concat('&affid=siqra1446').concat('&affExtParam1='+month+day+year+'cl'+hour+minu+ren).concat('&affExtParam2=FK_Kudrat').replace(/(\?&)/g, '?').replace(/&&/g, '&');
+                            tagnot= tagnots.concat('&affid='+ListflagData.flipkart_tag).concat('&affExtParam1='+month+day+year+'cl'+hour+minu+ren).concat('&affExtParam2=FK_Kudrat').replace(/(\?&)/g, '?').replace(/&&/g, '&');
                               console.log('tagnot: ', tagnot);
                             }else{
                               var dateObj = new Date();
@@ -566,7 +566,7 @@ function urldecode(str) {
                                     var hour = dateObj.getHours();
                                     var minu = dateObj.getMinutes();
                                     let ren = Math.random().toString(36).substring(7);
-                              tagnot= tagnotFlipkart.concat('?affid=siqra1446').concat('&affExtParam1='+month+day+year+'cl'+hour+minu+ren).concat('&affExtParam2=FK_Kudrat');
+                              tagnot= tagnotFlipkart.concat('?affid='+ListflagData.flipkart_tag).concat('&affExtParam1='+month+day+year+'cl'+hour+minu+ren).concat('&affExtParam2=FK_Kudrat');
                             }
             
                             if(ListflagData.bitlyFlag == "True"){ 
