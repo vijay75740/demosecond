@@ -285,7 +285,7 @@ function postFlipkartImageWidth(post_link,token) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-//              posttele (rides[0].cnt, last_insert_id.id, matchObj);
+             posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
@@ -335,14 +335,14 @@ function urldecode(str) {
              let final =[];
              let array = userExists[0].text_data.split("\n");
               for (let j = 0; j < array.length; j++) {
-                if(array[j].match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)){
+                if(array[j].match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&!\/\/=]+)/g)){
                   let xzhxzh;
                     if(array[j].match(/amazon.in/g) || array[j].match(/amazon.it/g)){
                      xzhxzh = array[j].replace(/[[\]]/g,'').replace(/ /g, '@')
                     }else{
                     xzhxzh = array[j]
                     }
-                  let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,&\/\/=]+)/g)
+                  let urls = xzhxzh.match(/(((ftp|https?):\/\/)[\-\w@:%_\+.~#?,!&\/\/=]+)/g)
 		  console.log("url------",urls);
                       unshort(urls[0]).then(function(unshortenedUrls){ 
                         let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
