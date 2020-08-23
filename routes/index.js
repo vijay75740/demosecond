@@ -285,7 +285,7 @@ function postFlipkartImageWidth(post_link,token) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-             posttele (rides[0].cnt, last_insert_id.id, matchObj);
+//              posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
@@ -346,7 +346,7 @@ function urldecode(str) {
 		  console.log("url------",urls);
                       unshort(urls[0]).then(function(unshortenedUrls){ 
                         let unshortenedUrl = unshortenedUrls.unshorten.replace(/&amp;/g,'&');
-                        console.log("0",unshortenedUrl);
+                       
                     if(unshortenedUrl.match(/amazon.in/g) || unshortenedUrl.match(/amazon.it/g)){
                       let tagnot;
                       if(unshortenedUrl.match(/earnkaro/g)){
