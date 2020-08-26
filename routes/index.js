@@ -547,6 +547,8 @@ function urldecode(str) {
                                   finalLink[h] = ""
                                 }else if(finalLink[h].match(/^affid/g)){
                                   finalLink[h] = ""
+                                }else if(finalLink[h].match(/^param/g)){
+                                  finalLink[h] = ""
                                 }
                               }
                               var dateObj = new Date();
@@ -586,6 +588,8 @@ function urldecode(str) {
                                   finalLink[h] = 'demoyou'
                                 }else if(finalLink[h].match(/^affExtParam1/g)){
                                   finalLink[h] = 'demoyou'
+                                }else if(finalLink[h].match(/^param/g)){
+                                  finalLink[h] = 'demoyou'
                                 }
                               }
                             let sstarget= finalLink.join('&').replace(/&demoyou/g, '');
@@ -605,6 +609,8 @@ function urldecode(str) {
                                 if(finalLink[h].match(/^affid/g)){
                                   finalLink[h] = 'demoyou'
                                 }else if(finalLink[h].match(/^affExtParam1/g)){
+                                  finalLink[h] = 'demoyou'
+                                }else if(finalLink[h].match(/^param/g)){
                                   finalLink[h] = 'demoyou'
                                 }
                               }
