@@ -263,7 +263,7 @@ function postFlipkartImageWidth(post_link,token) {
           var matchObj = [];
 
           $('.tgme_widget_message_wrap').each((i, el) => {
-		  console.log("jj",$(el).html());
+// 		  console.log("jj",$(el).html());
             var linkss = $(el).find('.tgme_widget_message_footer').find('a').attr('href').split('/');
             var link = htmlToText.fromString($(el).find('.tgme_widget_message_text').html());
             matchObj.push({ id: Number(linkss[4]), text_data: emmoji(link) })
