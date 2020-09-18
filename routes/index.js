@@ -298,13 +298,13 @@ function postFlipkartImageWidth(post_link,token) {
     }, 19000)
     
     function urlencode(str) {
-      return str.replace(/%21/g,'!').replace(/%20/g,' ').replace(/%22/g,'"').replace(/pr%26/g,'pr?').replace(/%26/g,'&')
+      return str.replace(/%21/g,'!').replace(/%22/g,'"').replace(/pr%26/g,'pr?').replace(/%26/g,'&')
         .replace(/%27/g,'\'').replace(/%3A/g,':').replace(/%2F/g,'/').replace(/%3D/g,'=')
         .replace(/%28/g,'(').replace(/%3F/g,'?').replace(/%29/g,')').replace(/%2A/g,'*')
         .replace(/%20/g, '+');
     }
     function conurlencode(str) {
-      return str.replace(/%21/g,'!').replace(/%20/g,' ').replace(/%22/g,'"').replace(/%26/g,'&')
+      return str.replace(/%21/g,'!').replace(/%22/g,'"').replace(/%26/g,'&')
         .replace(/%27/g,'\'').replace(/%3A/g,':').replace(/%2F/g,'/').replace(/%3D/g,'=')
         .replace(/%28/g,'(').replace(/%3F/g,'?').replace(/%29/g,')').replace(/%2A/g,'*')
         .replace(/%20/g, '+');
@@ -392,7 +392,9 @@ function urldecode(str) {
                                 finalLink[h] = ""
                               }else if(finalLink[h].match(/^keywords/g)){
                                 finalLink[h] = ""
-                              }
+                              }else if(finalLink[h].match(/^k/g)){
+				  finalLink[h] = ""
+				}
                             }
                            
                           let tagnots= finalLink.join('&').replace(/@/g, '').replace(/&&/g, '&').replace(/([\?][\/])/g, '?').replace(/(\?&)/g, '?').replace(/&&&/g, '&').replace(/([\/][\?])/g, '?');
@@ -560,7 +562,7 @@ function urldecode(str) {
                               var minu = dateObj.getMinutes();
                               let ren = Math.random().toString(36).substring(7);
                             let tagnots= finalLink.join('&').replace(/@/g, '').replace(/&&/g, '&').replace(/(\?&)/g, '?').replace(/&&&/g, '&');
-                            tagnot= tagnots.concat('&affid='+ListflagData.flipkart_tag).concat('&affExtParam1='+month+day+year+'cl'+hour+minu+ren).concat('&affExtParam2=FK_Kudrat').replace(/(\?&)/g, '?').replace(/&&/g, '&');
+                            tagnot= tagnots.concat('&affid='+ListflagData.flipkart_tag).replace(/(\?&)/g, '?').replace(/&&/g, '&');
                               console.log('tagnot: ', tagnot);
                             }else{
                               var dateObj = new Date();
@@ -570,7 +572,7 @@ function urldecode(str) {
                                     var hour = dateObj.getHours();
                                     var minu = dateObj.getMinutes();
                                     let ren = Math.random().toString(36).substring(7);
-                              tagnot= tagnotFlipkart.concat('?affid='+ListflagData.flipkart_tag).concat('&affExtParam1='+month+day+year+'cl'+hour+minu+ren).concat('&affExtParam2=FK_Kudrat');
+                              tagnot= tagnotFlipkart.concat('?affid='+ListflagData.flipkart_tag);
                             }
             
                             if(ListflagData.bitlyFlag == "True"){ 
