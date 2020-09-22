@@ -7,7 +7,6 @@ let request = require("request");
 var config = require('../config/global');
 var connection = require('../config/connection');
 const BitlyClient = require('bitly').BitlyClient;
-const bitly = new BitlyClient('55221f2e1fc32ccff7d70d514f382b1da59db5e5');
 var tall = require('tall').default;
 const htmlToText = require('html-to-text');
 const axios = require('axios');
@@ -315,6 +314,8 @@ function urldecode(str) {
     }
 
     function posttele (bodyss, lastInsertId, lastArrayData) {
+	    
+      const bitly = new BitlyClient('55221f2e1fc32ccff7d70d514f382b1da59db5e5');
       let sqlsss = "SELECT * FROM post_flags";
         connection.query(sqlsss, function (err, flagData) {
           if (err) {
