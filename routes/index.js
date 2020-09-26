@@ -315,7 +315,7 @@ function urldecode(str) {
 
     function posttele (bodyss, lastInsertId, lastArrayData) {
 	    
-      const bitly = new BitlyClient('55221f2e1fc32ccff7d70d514f382b1da59db5e5');
+//       const bitly = new BitlyClient('55221f2e1fc32ccff7d70d514f382b1da59db5e5');
       let sqlsss = "SELECT * FROM post_flags";
         connection.query(sqlsss, function (err, flagData) {
           if (err) {
@@ -323,6 +323,8 @@ function urldecode(str) {
           setup();
           }
           let ListflagData = flagData[0];
+          let bitly = new BitlyClient(ListflagData.current_bitly);
+		
         let sqls = "SELECT post_id FROM post_telegram2 ORDER BY id DESC LIMIT 1";
         connection.query(sqls, function (err, rides) {
           if (err) {
