@@ -781,7 +781,7 @@ function urldecode(str) {
                }
                 let insertFeild = [rides[0].post_id + i, JSON.stringify(finalAmazon.replace(/[^0-9a-zA-Zㄱ-힣+×÷=%♤♡☆♧)(*&^/~#@!-:;,?`_|<>{}¥£€$◇■□●○•°※¤《》¡¿₩\[\]\"\' \\]/g ,""))]
 //                 let sqlss = "INSERT INTO post_telegram2 (post_id,data) VALUES (" + nextId + "," + JSON.stringify(finalAmazon.replace(/[^0-9a-zA-Zㄱ-힣+×÷=%♤♡☆♧)(*&^/~#@!-:;,?`_|<>{}¥£€$◇■□●○•°※¤《》¡¿₩\[\]\"\' \\]/g ,"")) + ")";
-                let sqlss = "INSERT INTO post_telegram2 (post_id,data) VALUES (" + nextId + ", demo1)";
+                let sqlss = "INSERT INTO post_telegram2 (post_id,data) VALUES (" + nextId + ", 'demo1')";
 		      
                 connection.query(sqlss, [insertFeild], function (err, rides) {
                   if (err) {
