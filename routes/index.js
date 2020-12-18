@@ -249,6 +249,16 @@ function postFlipkartImageWidth(post_link,token) {
         });
       }
     }
+
+function tinyUrl(dddd) {  
+	request({
+	  uri: "http://tinyurl.com/api-create.php?url="+dddd,
+	  method: "GET",
+	}, (err, response, body) => {
+	  let responses ={"link":body};
+	   return responses;
+	})
+}
  
 // setInterval( function (req, res, next) {
 //   async.waterfall([
@@ -285,7 +295,7 @@ function postFlipkartImageWidth(post_link,token) {
               console.log('err: ', err);
             }
             else if (rides[0].cnt == 0) {
-//             posttele (rides[0].cnt, last_insert_id.id, matchObj);
+            posttele (rides[0].cnt, last_insert_id.id, matchObj);
             } else {
               // nextCall(null, bodyss);
             }
@@ -423,8 +433,9 @@ function urldecode(str) {
                             return result;
                           })
                           .catch(function(error) {
-                           let responses ={"link":dddd};
-                           return responses;
+				  tinyUrl(dddd)
+//                            let responses ={"link":dddd};
+//                            return responses;
                           });
                               final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link);
                          postImageWidth(response.link,ListflagData.bestshopping_token); 
@@ -635,8 +646,13 @@ function urldecode(str) {
                           }
                         }
                           async function example1(dddd) {
-                            let response =await bitly.shorten(dddd);
-				 
+                            let response =await bitly.shorten(dddd)
+				  .then(function(result) {
+				    return result;
+				  })
+				  .catch(function(error) {
+				    tinyUrl(dddd)
+				  });
                           final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ');
                           postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
                         }
@@ -647,17 +663,18 @@ function urldecode(str) {
                             return result;
                           })
                           .catch(function(error) {
-                           let jjjh =  unshort(dddd).then(function(unshortenedUrls){ 
-                             let responses;
-                             if(unshortenedUrls.unshorten.match(/www.flipkart.com/g)){
-                             responses ={"link":unshortenedUrls.unshorten.replace(/www.flipkart.com/g, 'dl.flipkart.com/dl')};
-                              }else{
-                             responses ={"link":unshortenedUrls.unshorten};
-                              }
-                             return responses;
-                          })
-                          .catch(function(err){ return err;})
-                          return jjjh;
+//                            let jjjh =  unshort(dddd).then(function(unshortenedUrls){ 
+//                              let responses;
+//                              if(unshortenedUrls.unshorten.match(/www.flipkart.com/g)){
+//                              responses ={"link":unshortenedUrls.unshorten.replace(/www.flipkart.com/g, 'dl.flipkart.com/dl')};
+//                               }else{
+//                              responses ={"link":unshortenedUrls.unshorten};
+//                               }
+//                              return responses;
+//                           })
+//                           .catch(function(err){ return err;})
+//                           return jjjh;
+				  tinyUrl(dddd)
       
                           });
                             final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link);
@@ -743,8 +760,9 @@ function urldecode(str) {
                       return result;
                     })
                     .catch(function(error) {
-                     let responses ={"link":dddd};
-                     return responses;
+//                      let responses ={"link":dddd};
+//                      return responses;
+			    tinyUrl(dddd)
                     });
                         final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link);
                         postImageWidth(response.link,ListflagData.bestshopping_token); 
