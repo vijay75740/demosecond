@@ -653,12 +653,22 @@ function urldecode(str) {
 				    return result;
 				  })
 				  .catch(function(error) {
-					  console.log("m222222");
-				    tinyUrl(dddd)
+					  console.log("m222222",dddd);
+				    tinyUrlss(dddd)
 				  });
                           final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ');
                           postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
                         }
+				async function tinyUrlss(dddd) {  
+					request({
+					  uri: "http://tinyurl.com/api-create.php?url="+dddd,
+					  method: "GET",
+					}, (err, response, body) => {
+						console.log("m555",body)
+					  let responses ={"link":body};
+					   return responses;
+					})
+				}
                         async function example3(dddd) {
 					  console.log("m33333333",dddd);
 				
