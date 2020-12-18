@@ -646,23 +646,30 @@ function urldecode(str) {
                           }
                         }
                           async function example1(dddd) {
+					  console.log("m11111",dddd);
+				  
                             let response =await bitly.shorten(dddd)
 				  .then(function(result) {
 				    return result;
 				  })
 				  .catch(function(error) {
+					  console.log("m222222");
 				    tinyUrl(dddd)
 				  });
                           final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ');
                           postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
                         }
                         async function example3(dddd) {
+					  console.log("m33333333",dddd);
+				
                           let response = await bitly
                           .shorten(dddd)
                           .then(function(result) {
                             return result;
                           })
                           .catch(function(error) {
+					  console.log("m44444");
+				  
 //                            let jjjh =  unshort(dddd).then(function(unshortenedUrls){ 
 //                              let responses;
 //                              if(unshortenedUrls.unshorten.match(/www.flipkart.com/g)){
