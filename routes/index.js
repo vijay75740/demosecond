@@ -650,14 +650,15 @@ function urldecode(str) {
 				  
                             let response =await bitly.shorten(dddd)
 				  .then(function(result) {
+                          final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),result.link).replace(/.#x...../g,' %E2%99%A8 ');
+                          postFlipkartImageWidth(result.link,ListflagData.bestshopping_token);
 				    return result;
 				  })
 				  .catch(function(error) {
 					  console.log("m222222",dddd);
 				    tinyUrlss(dddd)
 				  });
-                          final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ');
-                          postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
+                         
                         }
 				async function tinyUrlss(dddd) {  
 					await request({
@@ -666,7 +667,9 @@ function urldecode(str) {
 					}, (err, response, body) => {
 						console.log("m555",body)
 					  let responses ={"link":body};
-					   return responses;
+			 final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),responses.link).replace(/.#x...../g,' %E2%99%A8 ');
+                          postFlipkartImageWidth(responses.link,ListflagData.bestshopping_token);
+// 					   return responses;
 					})
 				}
                         async function example3(dddd) {
