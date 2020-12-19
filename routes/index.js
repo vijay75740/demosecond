@@ -653,8 +653,17 @@ function urldecode(str) {
 				    return result;
 				  })
 				  .catch(function(error) {
+					  let dfdfdf = await request({
+					  uri: "http://tinyurl.com/api-create.php?url="+dddd,
+					  method: "GET",
+					}, (err, response, body) => {
+						console.log("m555",body)
+					  let responses ={"link":body};
+					   return responses;
+					})
+					  return dfdfdf;
 					  console.log("m222222",dddd);
-				    tinyUrlss(dddd)
+// 				    tinyUrlss(dddd)
 				  });
                           final[j] = array[j].replace(urls[0].replace(/@/g, ' ').trim(),response.link).replace(/.#x...../g,' %E2%99%A8 ');
                           postFlipkartImageWidth(response.link,ListflagData.bestshopping_token);
