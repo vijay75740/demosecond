@@ -6,11 +6,18 @@ var mysql  = require('mysql');
 
 
 //- Connection configuration
+// var db_config = {
+//   host     : 'remotemysql.com',
+//   user     : 'LEUJq5pWf1',
+//   password : '6Pm2yLz9Wy',
+//   database:'LEUJq5pWf1'
+// };
+
 var db_config = {
-  host     : 'remotemysql.com',
-  user     : 'LEUJq5pWf1',
-  password : '6Pm2yLz9Wy',
-  database:'LEUJq5pWf1'
+  host     : 'sql6.freesqldatabase.com',
+  user     : 'sql6421155',
+  password : 'UeJ9l6Ea5a',
+  database:'sql6421155'
 };
 
 // var db_config = {
