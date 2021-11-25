@@ -15,9 +15,9 @@ var mysql  = require('mysql');
 
 var db_config = {
   host     : 'sql6.freesqldatabase.com',
-  user     : 'sql6431753',
-  password : 'uw22phSVBd',
-  database:'sql6431753'
+  user     : 'sql6453992',
+  password : 'Wi6qLQrqdr',
+  database:'sql6453992'
 };
 
 // var db_config = {
