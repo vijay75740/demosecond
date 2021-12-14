@@ -474,7 +474,9 @@ function urldecode(str) {
                             if(urlencode(finalLink[1]).match(ListflagDatass[k].domain_url)){
                               // tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(finalLink[1]));
                               tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(finalLink[1]));
-                            }
+                            }else if(urlencode(finalLink[1]).match(/ajio.com/g)){
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(finalLink[1]));
+			    }
                           }
                           }else{
                             quelink = unshortenedUrl;
@@ -487,7 +489,9 @@ function urldecode(str) {
                               if(urlencode(unshortenedUrl).match(ListflagDatass[t].domain_url)){
                                 // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                                 tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(unshortenedUrl));
-                              }
+                              }else if(urlencode(unshortenedUrl).match(/ajio.com/g)){
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(unshortenedUrl));
+			      }
                             }
                           }
                           }else{
@@ -506,7 +510,9 @@ function urldecode(str) {
                               if(urlencode(quelink).match(ListflagDatass[t].domain_url)){
                                 // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                                 tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(quelink));
-                              }
+                              }else if(urlencode(quelink).match(/ajio.com/g)){
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(quelink));
+			      }
                             }
                           // }
                           // unshort(unshortenedUrl).then(function(unshortenedUrls11){ 
