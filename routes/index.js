@@ -476,6 +476,8 @@ function urldecode(str) {
                               tagnot= ListflagDatass[k].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(finalLink[1]));
                             }else if(urlencode(finalLink[1]).match(/ajio.com/g)){
                               tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(finalLink[1]));
+			    }else if(urlencode(finalLink[1]).match(/myntra.com/g)){
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(finalLink[1]));
 			    }
                           }
                           }else{
@@ -490,6 +492,8 @@ function urldecode(str) {
                                 // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                                 tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(unshortenedUrl));
                               }else if(urlencode(unshortenedUrl).match(/ajio.com/g)){
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(unshortenedUrl));
+			      }else if(urlencode(unshortenedUrl).match(/myntra.com/g)){
                               tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(unshortenedUrl));
 			      }
                             }
@@ -511,6 +515,8 @@ function urldecode(str) {
                                 // tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urlencode(unshortenedUrl));
                                 tagnot= ListflagDatass[t].Landing_Page.concat("?subid="+ListflagData.admitad_post_tag+"&ulp=").concat(urldecode(quelink));
                               }else if(urlencode(quelink).match(/ajio.com/g)){
+                              tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(quelink));
+			      }else if(urlencode(quelink).match(/myntra.com/g)){
                               tagnot= ("https://inr.deals/track?id=jig616926125&src=merchant-detail-backend&campaign=cps&url=").concat(urldecode(quelink));
 			      }
                             }
