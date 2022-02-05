@@ -8,9 +8,9 @@ var mysql  = require('mysql');
 //- Connection configuration
 var db_config = {
   host     : 'sql6.freesqldatabase.com',
-  user     : 'sql6460964',
-  password : 'HSl77PfFfD',
-  database:'sql6460964'
+  user     : 'sql6470527',
+  password : 'ziEDDHe5bZ',
+  database:'sql6470527'
 };
 
 // var db_config = {
